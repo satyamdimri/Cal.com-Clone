@@ -11,9 +11,9 @@ const app = express();
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow localhost dev origins on any port and non-browser requests (no origin header).
-      const isLocalDevOrigin = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin || '');
-      if (!origin || isLocalDevOrigin) {
+      // Allow deployed frontend origin and non-browser requests.
+      const isVercelOrigin = origin === 'https://cal-com-clone-sooty.vercel.app';
+      if (!origin || isVercelOrigin) {
         return callback(null, true);
       }
 

@@ -8,7 +8,7 @@ const start = async () => {
   try {
     await prisma.$connect();
     app.listen(port, () => {
-      console.log(`Server running on http://localhost:${port}`);
+      console.log(`Server running on port ${port}`);
     });
   } catch (error) {
     console.error('Failed to start server:', error);

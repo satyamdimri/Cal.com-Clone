@@ -32,6 +32,7 @@ app.use('/availability', availabilityRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/bookings', bookingRoutes);
 app.use('/api/public', publicRoutes);
+app.use('/public', publicRoutes);
 
 app.use((req, _res, next) => {
   next({ statusCode: 404, message: `Route not found: ${req.method} ${req.originalUrl}` });

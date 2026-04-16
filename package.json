@@ -1,8 +1,4 @@
 {
   "name": "cal-com-clone-monorepo",
-  "private": true,
-  "scripts": {
-    "vercel:build": "npm install --prefix backend && npm run vercel:build --prefix backend",
-    "build": "npm run vercel:build"
-  }
+  "private": true
 }

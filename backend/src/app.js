@@ -10,15 +10,12 @@ const app = express();
 
 app.use(
   cors({
-    origin: (origin, callback) => {
-      // Allow deployed frontend origin and non-browser requests.
-      const isVercelOrigin = origin === 'https://cal-com-clone-sooty.vercel.app';
-      if (!origin || isVercelOrigin) {
-        return callback(null, true);
-      }
-
-      return callback(new Error(`CORS blocked for origin: ${origin}`));
-    },
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "https://cal-com-clone-sooty.vercel.app",
+    ],
+    credentials: true,
   })
 );
 app.use(express.json());
